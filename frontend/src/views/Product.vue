@@ -38,7 +38,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="buttons d-flex flex-row mt-5 gap-3"> <button class="btn btn-outline-dark">Buy Now</button> <button class="btn btn-dark">Add to Basket</button> </div>
+                    <div class="buttons d-flex flex-row mt-5 gap-3"> <button class="btn btn-outline-dark">Buy Now</button> <button @click="addToCart" class="btn btn-dark">Add to Basket</button> </div>
                     <div class="search-option"> <i class='bx bx-search-alt-2 first-search'></i>
                         <div class="inputs"> <input type="text" name=""> </div> <i class='bx bx-share-alt share'></i>
                     </div>
@@ -237,6 +237,7 @@ body {
 <script>
 
 import axios from 'axios'
+import { toast } from 'bulma-toast'
 
 export default {
 
@@ -266,6 +267,26 @@ export default {
                 ))
 
         },
+        addToCart(){
+            console.log('add to cart clicked')
+            if(isNaN(this.quantity) || this.quantity<1){
+                this.quantity = 1
+            }
+            const item = {
+                product : this.product,
+                quantity: this.quantity
+            }
+            //we call the add to cart method from the vuex using commit
+            this.$store.commit('addToCart', item)
+            toast({
+                message: 'The product was added to the cart',
+                type: 'is-success',
+                dismissible: true,
+                pauseOnHover: true,
+                duration: 2000,
+                position: 'bottom-right',
+            })
+        }
     }
 }
 </script>
