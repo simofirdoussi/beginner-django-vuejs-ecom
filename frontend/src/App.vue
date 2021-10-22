@@ -23,12 +23,7 @@
 
         </ul>
 
-        <template v-if="$store.state.isAuthenticated" >
-          <router-link to='/my-account' type="button" class="btn btn-light">My Account</router-link>
-        </template>
-        <template v-else>
           <router-link to='/login' type="button" class="btn btn-light">Login</router-link>  
-        </template>
         
         <router-link to='/cart' type="button" class="btn btn-info">Cart({{cartTotalLength}})</router-link>
       </div>
