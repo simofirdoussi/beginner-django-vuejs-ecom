@@ -32,7 +32,7 @@ export default {
   methods: {
      getAllProducts() {
       axios
-        .get('http://127.0.0.1:8000/api/all-products/')
+        .get('https://ecom-api-tdg.herokuapp.com/api/all-products/')
         .then(response => {
           this.allProducts = response.data
         })

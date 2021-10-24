@@ -42,7 +42,7 @@ export default {
                     password: this.password
                 }
                 axios
-                    .post("http://127.0.0.1:8000/api/users/", formData)
+                    .post("https://ecom-api-tdg.herokuapp.com/api/users/", formData)
                     .then(response => {
                         toast({
                             message: 'Account created, you can now login',

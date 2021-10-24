@@ -28,7 +28,7 @@ export default {
                 password: this.password,
             }
             axios
-                .post('http://127.0.0.1:8000/api/token/login/', formData)
+                .post('https://ecom-api-tdg.herokuapp.com/api/token/login/', formData)
                 .then(response=>{
                     const token = response.data.auth_token
                     this.$store.commit('setToken', token) //calling the mutation

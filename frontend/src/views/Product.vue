@@ -257,7 +257,7 @@ export default {
             const product_slug = this.$route.params.product_slug
 
             axios 
-                .get(`http://127.0.0.1:8000/api/product/${product_slug}/`)
+                .get(`https://ecom-api-tdg.herokuapp.com/api/product/${product_slug}/`)
                 .then(response=>
                     {this.product = response.data
                     document.title = this.product.name + ' | Django Ecom'

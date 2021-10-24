@@ -209,7 +209,7 @@ export default {
                 'stripe_token': token.id
             }
             await axios
-                .post('http://127.0.0.1:8000/api/checkout/', data)
+                .post('https://ecom-api-tdg.herokuapp.com/api/checkout/', data)
                  
                 .then(response => {
                     this.$store.commit('clearCart')
