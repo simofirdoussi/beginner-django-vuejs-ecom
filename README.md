@@ -1,7 +1,5 @@
 # beginner-django-vuejs-ecom
 
-# Django-Vuejs-Auth0
-
 <p align="center">
     
 
